@@ -2,12 +2,12 @@ package wooso_baboo;
 
 public class Account{
 
+		
 		private double debit;
 		private double credit;
 		private double balance;
 		
 		
-
 		public double getAccount(){
 			return balance;
 			}
@@ -17,7 +17,6 @@ public class Account{
 			a=balance-x;
 			
 			if (a<0){
-				
 				
 				System.out.println("Debit amount exceeded account balance.");
 				

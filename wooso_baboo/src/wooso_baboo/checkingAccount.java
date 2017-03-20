@@ -1,5 +1,6 @@
 package wooso_baboo;
 
-public class checkingAccount {
+public class checkingAccount extends Account {
+
 
 }
