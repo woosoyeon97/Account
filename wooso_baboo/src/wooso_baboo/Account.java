@@ -2,17 +2,14 @@ package wooso_baboo;
 
 public class Account{
 
-		
-		private double debit;
-		private double credit;
-		private double balance;
+		protected double balance;
 		
 		
 		public double getAccount(){
 			return balance;
 			}
 		
-		public void Debit(double x){
+		public void debit(double x){
 			double a;
 			a=balance-x;
 			
@@ -32,10 +29,9 @@ public class Account{
 			
 		}
 		
-		public void Credit(double b){
-			balance+=b;
-		}
-		
+		public void credit(double a){
+			balance+=a;
+		}		
 }
 
 	
