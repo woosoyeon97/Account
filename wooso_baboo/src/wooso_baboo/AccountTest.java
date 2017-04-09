@@ -5,38 +5,49 @@ import java.util.Scanner;
 public class AccountTest {
 
 	public static void main(String[] args){
-			
-		checkingAccount	account1 = new checkingAccount(100.0,0.07,0.01);
-		checkingAccount account2 = new checkingAccount(100.0,0.07,0.01);
+		Account account1=new checkingAccount(100,50,0.01,0.07);
+		Account account2=new SavingAccount(100,0.05);
 		
 		Scanner input=new Scanner(System.in);
+		double amount;
 		
-		System.out.printf("Account balance1:$ %f\n",account1.getAccount());//account1의 입금을 받음
-		System.out.printf("Account balance1:$ %f\n",account2.getAccount());//account1의 입금을 받음
+		System.out.printf("Account1 balance:$ %.2f\t현재출금가능금액: %.2f\n",account1.getAccount(),account1.getwithdrawableAccount());//account1의 입금을 받음
+		System.out.println("Enter withdrawal amount for Account1: ");
+		amount=input.nextDouble();
+		account1.debit(amount);
+		System.out.printf("Account1 balance:$ %.2f\t현재출금가능금액: %.2f\n",account1.getAccount(),account1.getwithdrawableAccount());
+		if(((checkingAccount)account1).isBankrupted()==false){
+			System.out.println("account1 went Bankrupt!");
+		}
+		account1.passTime(1);
+		System.out.printf("Account1 balance:$ %.2f\t현재출금가능금액: %.2f\n",account1.getAccount(),account1.getwithdrawableAccount());
+		if(((checkingAccount)account1).isBankrupted()==false){
+			System.out.println("account1 went Bankrupt!");
+		}
+		account1.passTime(5);
+		System.out.printf("Account1 balance:$ %.2f\t현재출금가능금액: %.2f\n",account1.getAccount(),account1.getwithdrawableAccount());
+		if(((checkingAccount)account1).isBankrupted()==false){
+			System.out.println("account1 went Bankrupt!");
+		}
 		
+		//SavingAccount
+		System.out.println();;
+		System.out.printf("Account2 balance:$ %.2f\t현재출금가능금액: %.2f\n",account2.getAccount(),account2.getwithdrawableAccount());
+		System.out.println("6 Month later");
+		account2.passTime(6);
+		System.out.printf("Account2 balance:$ %.2f\t현재출금가능금액: %.2f\n",account2.getAccount(),account2.getwithdrawableAccount());
+		account2.debit(50);
 		
-		System.out.printf("Enter deposit amount for Account1:$ ");
-		Scanner input1=new Scanner(System.in);
-		double a = input1.nextDouble();
-		account1.credit(a);
+		System.out.println("next 6 Month later");
+		account2.passTime(6);
+		System.out.printf("Account2 balance:$ %.2f\t현재출금가능금액: %.2f\n",account2.getAccount(),account2.getwithdrawableAccount());
 		
-		System.out.printf("Account balance1:$ %f\n",account1.getAccount());//account1의 입금을 받음
-		System.out.printf("Account balance1:$ %f\n",account2.getAccount());//account1의 입금을 받음
-
-		System.out.printf("Enter withdrawal amount for Account2:$");
-		Scanner input2=new Scanner(System.in);
-		double b=input2.nextDouble();
-		account2.debit(b);
+		System.out.println("next 1 Month later!");
+		account2.passTime(1);
+		System.out.printf("Account2 balance:$ %.2f\t현재출금가능금액: %.2f\n",account2.getAccount(),account2.getwithdrawableAccount());
+		account2.debit(50);
+		System.out.printf("Account2 balance:$ %.2f\t현재출금가능금액: %.2f\n",account2.getAccount(),account2.getwithdrawableAccount());
 		
-		System.out.printf("Account balance1:$ %f\n",account1.getAccount());//account1의 입금을 받음
-		System.out.printf("Account balance1:$ %f\n",account2.getAccount());//account1의 입금을 받음
-
-		System.out.println("next month!");
-		
-				
-		System.out.printf("Account balance1:$ %f\n",account1.nextMonth());//account1의 입금을 받음
-		System.out.printf("Account balance1:$ %f\n",account2.nextMonth());//account1의 입금을 받음
-
 	
 	}
 	

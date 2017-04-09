@@ -1,9 +1,11 @@
 package wooso_baboo;
 
-public class Account{
+public abstract class Account{
 
 		protected double balance;
 		
+		public abstract double getwithdrawableAccount();
+		public abstract double passTime(int x);
 		
 		public double getAccount(){
 			return balance;
