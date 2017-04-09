@@ -1,6 +1,6 @@
 package wooso_baboo;
 
-public abstract class Account{
+public abstract class Account implements Valuable{
 
 		protected double balance;
 		

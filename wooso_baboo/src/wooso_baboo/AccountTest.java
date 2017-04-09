@@ -5,9 +5,12 @@ import java.util.Scanner;
 public class AccountTest {
 
 	public static void main(String[] args){
+		
 		Account account1=new checkingAccount(100,50,0.01,0.07);
 		Account account2=new SavingAccount(100,0.05);
 		
+		
+				
 		Scanner input=new Scanner(System.in);
 		double amount;
 		

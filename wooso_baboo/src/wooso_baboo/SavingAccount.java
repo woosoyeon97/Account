@@ -47,4 +47,17 @@ public class SavingAccount extends Account {
 			return balance;
 		}
 	}
+	
+	@Override
+	public double EstimateValue(int month){
+		int time=month;
+		int i;
+		for(i=0;i<time;i++){	
+			balance = balance+balance*interest;
+		}
+		return balance;
+	}
+	public String toString(int month){
+		return String.format("SavingsAccount_Balance: "+ firstMoney);
+	}
 }
